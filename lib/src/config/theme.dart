@@ -2,33 +2,33 @@ import 'package:flutter/material.dart';
 
 class Themings {
   static final ThemeData lightTheme = ThemeData(
-    textSelectionTheme: TextSelectionThemeData(
+    textSelectionTheme: const TextSelectionThemeData(
       cursorColor: Colors.black,
       selectionColor: Colors.grey,
       selectionHandleColor: Colors.black,
     ),
-    colorScheme: ColorScheme.light(),
+    colorScheme: const ColorScheme.light(),
     scaffoldBackgroundColor: Colors.white,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       backgroundColor: Colors.white,
       foregroundColor: Colors.black,
     ),
-    floatingActionButtonTheme: FloatingActionButtonThemeData(
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
       backgroundColor: Colors.black,
     ),
   );
 
   static final ThemeData darkTheme = ThemeData(
-    textSelectionTheme: TextSelectionThemeData(
+    textSelectionTheme: const TextSelectionThemeData(
       cursorColor: Colors.white,
       selectionColor: Colors.grey,
       selectionHandleColor: Colors.white,
     ),
-    colorScheme: ColorScheme.dark(
+    colorScheme: const ColorScheme.dark(
       primary: Colors.white,
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: ColorScheme.dark().background,
+      backgroundColor: const ColorScheme.dark().background,
     ),
   );
 }

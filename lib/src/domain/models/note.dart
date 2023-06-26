@@ -10,12 +10,12 @@ import 'package:notr/src/utils/constants/strings.dart';
 class Note extends Equatable {
   @PrimaryKey(autoGenerate: true)
   final int? id;
-  String? title;
-  String? content;
+  final String? title;
+  final String? content;
   final int createdAt;
-  int? editedAt;
+  final int? editedAt;
 
-  Note({
+  const Note({
     this.id,
     this.title,
     this.content,

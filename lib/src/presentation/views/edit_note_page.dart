@@ -52,10 +52,9 @@ class _EditNotePageState extends State<EditNotePage> {
           ),
           onPressed: () {
             if (widget.note == null) {
-              // creating a new note
               if (titleController.text.isNotEmpty ||
                   contentController.text.isNotEmpty) {
-                // only create the note if title or content is note empty
+                // create a note if title or content are empty
                 Note note = Note(
                   title: titleController.text,
                   content: contentController.text,
@@ -65,15 +64,14 @@ class _EditNotePageState extends State<EditNotePage> {
                 notesCubit.saveNote(note: note);
               }
             } else {
-              if (textFieldChangeDetected) {
-                Note newNote = Note(
-                  id: widget.note?.id,
-                  createdAt: widget.note?.createdAt ?? 0,
+              if (textFieldChangeDetected && widget.note != null) {
+                // update an existing note when changes are made
+                var updatedNote = widget.note!.copyWith(
                   title: titleController.text,
                   content: contentController.text,
                   editedAt: DateTime.now().millisecondsSinceEpoch,
                 );
-                notesCubit.updateNote(note: newNote);
+                notesCubit.updateNote(note: updatedNote);
               }
             }
             appRouter.pop();
