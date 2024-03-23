@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:notr/src/config/router.dart';
 import 'package:notr/src/domain/models/note.dart';
 import 'package:intl/intl.dart';
-import 'package:notr/src/config/app_router.dart';
 import 'package:notr/src/presentation/cubits/theme/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,7 +23,7 @@ class NoteCard extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        appRouter.push(EditNotePageRoute(note: note));
+        context.pushNamed(Routes.edit, extra: note);
       },
       child: Container(
         decoration: BoxDecoration(

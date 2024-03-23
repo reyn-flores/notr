@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:notr/src/config/app_router.dart';
+import 'package:go_router/go_router.dart';
+import 'package:notr/src/config/router.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -15,7 +16,9 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     scheduleMicrotask(() async {
       await Future.delayed(const Duration(milliseconds: 1000));
-      await appRouter.replace(const HomePageRoute());
+      if (context.mounted) {
+        context.replaceNamed(Routes.home);
+      }
     });
     super.initState();
   }

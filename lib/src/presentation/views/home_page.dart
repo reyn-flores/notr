@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:notr/src/config/app_router.dart';
+import 'package:go_router/go_router.dart';
+import 'package:notr/src/config/router.dart';
 import 'package:notr/src/domain/models/note.dart';
 import 'package:notr/src/presentation/cubits/notes/notes_cubit.dart';
 import 'package:notr/src/presentation/cubits/theme/theme_cubit.dart';
@@ -75,7 +76,7 @@ class HomePage extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          appRouter.push(EditNotePageRoute());
+          context.pushNamed(Routes.edit);
         },
         label: const Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),

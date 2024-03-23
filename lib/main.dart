@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notr/src/config/app_router.dart';
+// import 'package:notr/src/config/app_router.dart';
+import 'package:notr/src/config/router.dart';
 import 'package:notr/src/config/theme.dart';
 import 'package:notr/src/domain/repositories/database_repository.dart';
 import 'package:notr/src/locator.dart';
@@ -37,8 +38,9 @@ class MyApp extends StatelessWidget {
             darkTheme: Themings.darkTheme,
             themeMode: state.themeMode,
             debugShowCheckedModeBanner: false,
-            routerDelegate: appRouter.delegate(),
-            routeInformationParser: appRouter.defaultRouteParser(),
+            // routerDelegate: appRouter.delegate(),
+            // routeInformationParser: appRouter.defaultRouteParser(),
+            routerConfig: router,
             title: appTitle,
           );
         },

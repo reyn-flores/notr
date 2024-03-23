@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notr/src/config/app_router.dart';
+import 'package:go_router/go_router.dart';
 import 'package:notr/src/domain/models/note.dart';
 import 'package:intl/intl.dart';
 import 'package:notr/src/presentation/cubits/notes/notes_cubit.dart';
@@ -74,7 +74,7 @@ class _EditNotePageState extends State<EditNotePage> {
                 notesCubit.updateNote(note: updatedNote);
               }
             }
-            appRouter.pop();
+            context.pop();
           },
         ),
         actions: [
@@ -83,7 +83,7 @@ class _EditNotePageState extends State<EditNotePage> {
               if (widget.note != null) {
                 Note note = widget.note!;
                 notesCubit.removeNote(note: note);
-                appRouter.pop();
+                context.pop();
               }
             },
             icon: const Icon(
