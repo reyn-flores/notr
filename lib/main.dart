@@ -38,8 +38,6 @@ class MyApp extends StatelessWidget {
             darkTheme: Themings.darkTheme,
             themeMode: state.themeMode,
             debugShowCheckedModeBanner: false,
-            // routerDelegate: appRouter.delegate(),
-            // routeInformationParser: appRouter.defaultRouteParser(),
             routerConfig: router,
             title: appTitle,
           );
